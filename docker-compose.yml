@@ -11,3 +11,5 @@ services:
       - PYTHONUNBUFFERED=1
     ports:
       - ${PORT}:${PORT}
+    volumes:
+      - ./boltstream:/var/app/boltstream
