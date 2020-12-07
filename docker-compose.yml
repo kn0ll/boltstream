@@ -17,7 +17,7 @@ services:
       context: .
       args:
         APP_ROOT: /var/app
-    command: python manage.py runserver ${PORT}
+    command: python manage.py runserver 0.0.0.0:${PORT}
     environment:
       - PYTHONUNBUFFERED=1
       - DB_URL=mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@mysql:3306/${MYSQL_DATABASE}
