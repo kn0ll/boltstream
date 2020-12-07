@@ -6,6 +6,8 @@ services:
       context: .
       args:
         APP_ROOT: /var/app
-    command: sleep 9999999
+    command: python manage.py runserver ${PORT}
+    environment:
+      - PYTHONUNBUFFERED=1
     ports:
-      - 80:80
+      - ${PORT}:${PORT}
