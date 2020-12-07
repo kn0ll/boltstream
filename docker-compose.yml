@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        APP_ROOT: /var/app
+    command: sleep 9999999
+    ports:
+      - 80:80
