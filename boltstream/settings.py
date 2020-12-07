@@ -105,11 +105,9 @@ LOGGING = {
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
+DB_URL = ENV.str("DB_URL", "sqlite:///{}".format(os.path.join(BASE_DIR, "db.sqlite3")))
 DATABASES = {
-    "default": ENV.db_url(
-        default="sqlite:///{}".format(os.path.join(BASE_DIR, "db.sqlite3"))
-    )
+    "default": ENV.db_url(default=DB_URL)
 }
 
 CACHES = {"default": ENV.cache_url(default="dummycache://")}
